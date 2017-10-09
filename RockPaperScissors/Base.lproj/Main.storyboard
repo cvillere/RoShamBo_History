@@ -162,18 +162,47 @@
             <objects>
                 <viewController storyboardIdentifier="HistoryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aV4-wH-kRP" customClass="HistoryViewController" customModule="RockPaperScissors" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="OAo-FS-jKU"/>
-                        <viewControllerLayoutGuide type="bottom" id="Ufi-fK-r1h"/>
+                        <viewControllerLayoutGuide type="top" id="vO8-C1-udo"/>
+                        <viewControllerLayoutGuide type="bottom" id="z2h-Al-KB7"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" restorationIdentifier="HistoryViewController" id="5P5-AB-U4V" customClass="HistoryViewController" customModule="RockPaperScissors" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="UcX-25-ZLK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hBe-e7-9Vn">
+                                <rect key="frame" x="16" y="28" width="343" height="619"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ROC_history" id="AqJ-RF-8zc">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AqJ-RF-8zc" id="smc-EL-gbj">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="aV4-wH-kRP" id="ND0-wn-CLH"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hBe-e7-9Vn" firstAttribute="centerX" secondItem="UcX-25-ZLK" secondAttribute="centerX" id="3m5-9u-E8G"/>
+                            <constraint firstItem="hBe-e7-9Vn" firstAttribute="top" secondItem="vO8-C1-udo" secondAttribute="bottom" constant="8" id="B7D-jR-K3H"/>
+                            <constraint firstItem="hBe-e7-9Vn" firstAttribute="trailing" secondItem="UcX-25-ZLK" secondAttribute="trailingMargin" id="ShB-7y-cUJ"/>
+                            <constraint firstItem="z2h-Al-KB7" firstAttribute="top" secondItem="hBe-e7-9Vn" secondAttribute="bottom" constant="20" id="cj6-lc-Sic"/>
+                            <constraint firstItem="hBe-e7-9Vn" firstAttribute="leading" secondItem="UcX-25-ZLK" secondAttribute="leadingMargin" id="lyJ-AC-ljb"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableHistory" destination="hBe-e7-9Vn" id="jzd-V9-lhW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IHl-hz-ieU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1242" y="141"/>
+            <point key="canvasLocation" x="1241.5" y="140.5"/>
         </scene>
     </scenes>
     <resources>
